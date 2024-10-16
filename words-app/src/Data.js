@@ -1,0 +1,60 @@
+const words = [
+  {
+    id: "17173",
+    english: "niece",
+    transcription: "[niːs]",
+    russian: "племянница",
+    tags: "семья",
+    tags_json: '["u0441u0435u043cu044cu044f"]',
+  },
+  {
+    id: "17174",
+    english: "day",
+    transcription: "[deɪ]",
+    russian: "день",
+    tags: "время",
+    tags_json: '["u0432u0440u0435u043cu044f"]',
+  },
+  {
+    id: "17224",
+    english: "horse",
+    transcription: "[hɔːrs]",
+    russian: "лошадь",
+    tags: "животное",
+    tags_json: '["u0436u0438u0432u043eu0442u043du043eu0435"]',
+  },
+  {
+    id: "17244",
+    english: "aprel",
+    transcription: "[aprel`]",
+    russian: "апрель",
+    tags: "месяц",
+    tags_json: '["u043cu0435u0441u044fu0446"]',
+  },
+  {
+    id: "17247",
+    english: "cat",
+    transcription: "[cat]",
+    russian: "кошка",
+    tags: "животное",
+    tags_json: '["u0436u0438u0432u043eu0442u043du043eu0435"]',
+  },
+  {
+    id: "17248",
+    english: "dog",
+    transcription: "[dog]",
+    russian: "собака",
+    tags: "животное",
+    tags_json: '["u0436u0438u0432u043eu0442u043du043eu0435"]',
+  },
+  {
+    id: "17251",
+    english: "semen",
+    transcription: "[semen]",
+    russian: "сперма",
+    tags: "биология",
+    tags_json: '["u0431u0438u043eu043bu043eu0433u0438u044f"]',
+  },
+];
+
+export default words;
