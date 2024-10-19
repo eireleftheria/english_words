@@ -1,0 +1,10 @@
+.card_container {
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: darkslategrey;
+  font-size: 23px;
+  font-weight: 500;
+}

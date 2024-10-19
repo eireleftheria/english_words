@@ -1,0 +1,7 @@
+.table_rows {
+  color: darkslategrey;
+  font-size: 20px;
+}
+.table_rows td {
+  border-top: 1px solid #ddd;
+}

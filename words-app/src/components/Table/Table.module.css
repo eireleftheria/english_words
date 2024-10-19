@@ -1,0 +1,23 @@
+.table_container {
+  width: 80%;
+  border: 1px solid darkslategrey;
+  margin: 1rem auto;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(253, 185, 208);
+  color: darkslategrey;
+  font-size: 22px;
+}
+
+.table th:last-child {
+  width: 200px;
+}
