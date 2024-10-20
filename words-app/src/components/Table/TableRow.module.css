@@ -2,6 +2,19 @@
   color: darkslategrey;
   font-size: 20px;
 }
-.table_rows td {
-  border-top: 1px solid #ddd;
+
+.table_rows input {
+  font-size: 20px;
+  color: darkslategrey;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+  width: 95%;
+  box-sizing: border-box;
+}
+
+.table_rows input:focus {
+  outline: none;
+  border-color: rgb(253, 185, 208);
+  box-shadow: 0 0 5px rgb(253, 185, 208);
 }
