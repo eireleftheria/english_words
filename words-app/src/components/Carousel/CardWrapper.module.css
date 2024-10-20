@@ -1,0 +1,23 @@
+.cardWrapper_container {
+  display: flex;
+  width: 60%;
+  margin: 1rem auto;
+  align-items: center;
+}
+.prevButton,
+.nextButton {
+  background-color: lightseagreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 8rem;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+.prevButton:hover,
+.nextButton:hover {
+  background-color: rgb(22, 139, 134); /* Темнее для Edit при наведении */
+}

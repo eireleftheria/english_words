@@ -1,6 +1,6 @@
 .table_container {
   width: 80%;
-  border: 1px solid darkslategrey;
+  border: 3px solid darkslategrey;
   margin: 1rem auto;
   overflow-x: auto;
 }
@@ -13,7 +13,7 @@
 .table th {
   padding: 10px;
   text-align: center;
-  background-color: rgb(253, 185, 208);
+  background-color: rgba(253, 185, 208, 0.5);
   color: darkslategrey;
   font-size: 22px;
 }

@@ -2,14 +2,31 @@
   color: darkslategrey;
   font-size: 20px;
 }
-
+.idColumn {
+  width: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.englishColumn,
+.transcriptionColumn,
+.russianColumn {
+  width: 12rem;
+}
+.actionsColumn {
+  width: 14rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
 .table_rows input {
   font-size: 20px;
   color: darkslategrey;
   border: 1px solid #ddd;
   padding: 5px;
   border-radius: 4px;
-  width: 95%;
+  width: 12rem;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -17,4 +34,43 @@
   outline: none;
   border-color: rgb(253, 185, 208);
   box-shadow: 0 0 5px rgb(253, 185, 208);
+}
+
+.table_rows button {
+  width: 5rem;
+  color: darkslategrey;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 2px 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Плавный переход цвета */
+}
+.editButton {
+  background-color: #ff9933;
+}
+.editButton:hover {
+  background-color: #cc7a29; /* Темнее для Edit при наведении */
+}
+
+.deleteButton {
+  background-color: #ff4136;
+}
+.deleteButton:hover {
+  background-color: #c0392b; /* Темнее для Delete при наведении */
+}
+
+.saveButton {
+  background-color: lightgreen;
+}
+.saveButton:hover {
+  background-color: rgb(96, 190, 96); /* Темнее для Edit при наведении */
+}
+
+.closeButton {
+  background-color: rgb(248, 248, 123);
+}
+.closeButton:hover {
+  background-color: rgb(204, 204, 62); /* Темнее для Delete при наведении */
 }

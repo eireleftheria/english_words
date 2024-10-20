@@ -16,9 +16,12 @@ function CardElement({ english, transcription, russian }) {
           Проверить
         </button>
       ) : (
-        <p className={styles.translatedWord} onClick={() => setSelected(true)}>
+        <button
+          className={styles.translatedWord}
+          onClick={() => setSelected(true)}
+        >
           {russian}
-        </p>
+        </button>
       )}
     </div>
   );

@@ -1,72 +1,90 @@
 import React, { useState } from "react";
 import styles from "./TableRow.module.css";
-import Button from "../Button/Button";
 
 function TableRow({ id, english, transcription, russian }) {
   const [isSelected, setSelected] = useState(false);
-  const [valueEnglish, setValueEnglish] = useState(english);
-  const [valueTranscription, setValueTranscription] = useState(transcription);
-  const [valueRussian, setValueRussian] = useState(russian);
+  const [value, setValue] = useState({
+    id: id,
+    english: english,
+    transcription: transcription,
+    russian: russian,
+  });
 
-  function handleEnglishChange(event) {
-    setValueEnglish(event.target.value);
+  function handleSave() {
+    setValue({ ...value });
+    setSelected((prevValue) => !prevValue);
   }
 
-  function handleTranscriptionChange(event) {
-    setValueTranscription(event.target.value);
+  function handleClose() {
+    setSelected((prevValue) => !prevValue);
+    setValue({ id, english, transcription, russian });
   }
 
-  function handleRussianChange(event) {
-    setValueRussian(event.target.value);
+  function handleEdit() {
+    setSelected((prevValue) => !prevValue);
+  }
+
+  function handleChange(event) {
+    setValue((prevValue) => {
+      return { ...prevValue, [event.target.name]: event.target.value };
+    });
   }
 
   return (
     <tr className={styles.table_rows}>
-      <td>{id}</td>
-
-      <td>
-        {isSelected ? (
-          <input
-            type="text"
-            onChange={handleEnglishChange}
-            value={valueEnglish}
-            onBlur={() => setSelected(false)}
-          />
-        ) : (
-          <td onClick={() => setSelected(true)}>{valueEnglish}</td>
-        )}
-      </td>
-
-      <td>
-        {isSelected ? (
-          <input
-            type="text"
-            onChange={handleTranscriptionChange}
-            value={valueTranscription}
-            onBlur={() => setSelected(false)}
-          />
-        ) : (
-          <td onClick={() => setSelected(true)}>{valueTranscription}</td>
-        )}
-      </td>
-
-      <td>
-        {isSelected ? (
-          <input
-            type="text"
-            onChange={handleRussianChange}
-            value={valueRussian}
-            onBlur={() => setSelected(false)}
-          />
-        ) : (
-          <td onClick={() => setSelected(true)}>{valueRussian}</td>
-        )}
-      </td>
-
-      <td>
-        <Button text="Edit" colorVar="edit"></Button>
-        <Button text="Delete" colorVar="delete"></Button>
-      </td>
+      {" "}
+      {isSelected ? (
+        <>
+          <td className={styles.idColumn}>{id}</td>
+          <td className={styles.englishColumn}>
+            <input
+              type="text"
+              value={value.english}
+              name={"english"}
+              onChange={handleChange}
+            />
+          </td>
+          <td className={styles.transcriptionColumn}>
+            <input
+              type="text"
+              value={value.transcription}
+              name={"transcription"}
+              onChange={handleChange}
+            />
+          </td>
+          <td className={styles.russianColumn}>
+            <input
+              type="text"
+              value={value.russian}
+              name="russian"
+              onChange={handleChange}
+            />
+          </td>
+          <td className={styles.actionsColumn}>
+            <button className={styles.saveButton} onClick={handleSave}>
+              Save
+            </button>
+            <button className={styles.closeButton} onClick={handleClose}>
+              Close
+            </button>
+          </td>
+        </>
+      ) : (
+        <>
+          <td className={styles.idColumn}>{id}</td>
+          <td className={styles.englishColumn}>{value.english}</td>
+          <td className={styles.transcriptionColumn}>{value.transcription}</td>
+          <td className={styles.russianColumn}>{value.russian}</td>
+          <td>
+            <td className={styles.actionsColumn}>
+              <button className={styles.editButton} onClick={handleEdit}>
+                Edit
+              </button>
+              <button className={styles.deleteButton}>Delete</button>
+            </td>
+          </td>
+        </>
+      )}
     </tr>
   );
 }
