@@ -7,6 +7,7 @@ function CardWrapper({
   position,
   myWords,
   myWordsLength,
+  studiedCount,
 }) {
   console.log(myWords);
   return (
@@ -23,6 +24,7 @@ function CardWrapper({
       <p>
         {position + 1}/{myWordsLength}
       </p>
+      <p>Слов изучено: {studiedCount}</p>
     </>
   );
 }

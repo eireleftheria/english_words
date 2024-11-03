@@ -6,7 +6,7 @@ function Missing() {
   return (
     <div className={styles.missing_container}>
       <img src={notFoundImg} alt="404 page not found" />
-      <Link to="/table">
+      <Link to="/">
         <button className={styles.backButton}>
           Вернуться на главную страницу
         </button>

@@ -24,6 +24,7 @@
   width: 12rem;
   margin: 0 auto;
   cursor: pointer;
+  outline: none;
 }
 .checkButton {
   font-size: 20px;
@@ -33,6 +34,9 @@
 }
 .checkButton:hover {
   background-color: rgb(22, 139, 134); /* Темнее для Edit при наведении */
+}
+.checkButton:focus {
+  box-shadow: 0 0 0 3px rgba(22, 139, 134, 0.5); /* Эффект при фокусе */
 }
 .translatedWord {
   color: lightseagreen;

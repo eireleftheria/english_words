@@ -14,7 +14,7 @@ function App() {
         <div>
           <NavBar></NavBar>
           <Routes>
-            <Route path="/table" element={<Table></Table>}></Route>
+            <Route path="/" element={<Table></Table>}></Route>
             <Route path="/allcards" element={<Card></Card>}></Route>
             <Route
               path="/carousel"

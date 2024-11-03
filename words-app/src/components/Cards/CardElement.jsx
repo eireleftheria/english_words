@@ -1,8 +1,27 @@
 import styles from "../Cards/CardElement.module.css";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-function CardElement({ english, transcription, russian }) {
+function CardElement({
+  english,
+  transcription,
+  russian,
+  position,
+  onWordStudied,
+}) {
   const [isSelected, setSelected] = useState(true);
+  const focusButtonRef = useRef(null);
+
+  const handleCheck = () => {
+    setSelected(false);
+    onWordStudied();
+  };
+
+  useEffect(() => {
+    setSelected(true);
+    if (focusButtonRef.current) {
+      focusButtonRef.current.focus();
+    }
+  }, [position]);
 
   return (
     <div className={styles.cardElement_container}>
@@ -11,7 +30,8 @@ function CardElement({ english, transcription, russian }) {
       {isSelected ? (
         <button
           className={styles.checkButton}
-          onClick={() => setSelected(false)}
+          onClick={handleCheck}
+          ref={focusButtonRef}
         >
           Проверить
         </button>
